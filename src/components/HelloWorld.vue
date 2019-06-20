@@ -48,7 +48,8 @@ export default {
     },
     touchEnd(){
       //手指离开
-      console.log(1)
+      console.log(1);
+      console.log('test');
       clearTimeout(this.Loop);
     },
     touchStart(){
