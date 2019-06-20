@@ -16,7 +16,8 @@
       },
       data(){
           return{
-            message:'HAHA'
+            message:'HAHA',
+            tips:'123'
           }
       },
       methods:{
