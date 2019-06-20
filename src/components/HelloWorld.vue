@@ -44,7 +44,8 @@ export default {
       alert(data);
     },
     adb(){
-      console.log(13)
+      console.log(13);
+      console.log('test');
     },
     touchEnd(){
       //手指离开
