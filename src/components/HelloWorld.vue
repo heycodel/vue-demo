@@ -8,6 +8,7 @@
     <div>{{this.$store.state.count}}</div>
     <button @click="addFun">+</button>
     <button @click="reductionFun">-</button>
+    <button @click="test"></button>
   </div>
 </template>
 
