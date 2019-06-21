@@ -27,7 +27,8 @@ export default {
       show:false,
       item:{
         name:'ccc',
-        age:'18'
+        age:'18',
+        height:'180'
       }
     }
   },
