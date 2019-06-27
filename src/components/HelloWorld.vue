@@ -29,6 +29,7 @@ export default {
         name:'ccc',
         age:'18',
         height:'180'
+
       }
     }
   },
