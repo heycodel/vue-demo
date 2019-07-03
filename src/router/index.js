@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import childPage from  '@/components/childPage'
-import index from '@/compomemts/index'
+// import index from '@/compomemts/index'
 
 Vue.use(Router)
 
@@ -18,10 +18,10 @@ export default new Router({
       name: 'childPage',
       component: childPage
     },
-    {
-      path: '/',
-      name: 'index',
-      component: index
-    }
+    // {
+    //   path: '/',
+    //   name: 'index',
+    //   component: index
+    // }
   ]
 })

@@ -8,7 +8,8 @@
     <div>{{this.$store.state.count}}</div>
     <button @click="addFun">+</button>
     <button @click="reductionFun">-</button>
-    <button @click="test"></button>
+    <!--<button @click="test"></button>-->
+    <!--<div>{{time}}</div>-->
   </div>
 </template>
 
@@ -22,6 +23,7 @@ export default {
   },
   data () {
     return {
+      time:'',
       msg: 'Welcome to Your Vue.js App',
       loop:null,
       show:false,
@@ -36,7 +38,31 @@ export default {
   components: {
     ChildPage
   },
+  mounted:function () {
+    // this.countTime();
+  },
   methods:{
+    // countTime: function () {
+    //   //获取当前时间
+    //   var date = new Date();
+    //   var now = date.getTime();
+    //   //设置截止时间
+    //   var endDate = new Date("2019-07-10 00:00:00");
+    //   var end = endDate.getTime();
+    //   //时间差
+    //   var leftTime = end - now;
+    //   console.log(leftTime);
+    //   //定义变量 d,h,m,s保存倒计时的时间
+    //   if (leftTime >= 0) {
+    //     this.h = parseInt(leftTime / 1000 / 60 / 60);
+    //     this.m = parseInt(leftTime / 1000 / 60 % 60);
+    //     this.s = parseInt(leftTime / 1000 % 60);
+    //   }
+    //   //递归每秒调用countTime方法，显示动态时间效果
+    //   setTimeout(this.countTime, 1000);
+    //   this.time = this.h+":"+ this.m+":" +this.s
+    //
+    // },
     addFun(){
       this.$store.commit('add');
     },
