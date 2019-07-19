@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="header_bg">
-
+        <div class="back_url">
+          <img src="../assets/return.png" alt="">
+        </div>
     </div>
     <div class="tab_box">
         <div class="tab_title">歌曲</div>
@@ -47,6 +49,8 @@
     height: 420px;
     background: url("../assets/jay.png") no-repeat;
     background-size: cover;
+    /*padding: 51px 0 0 16px;*/
+    padding: 50px 0 91px 0 ;
   }
   .tab_box{
     display: flex;
@@ -103,5 +107,10 @@
     font-family:PingFang-SC-Medium;
     font-weight:500;
     color:rgba(170,170,170,1);
+  }
+  .back_url{
+    width: 40px;
+    height: 40px;
+    margin-left: 29px;
   }
 </style>

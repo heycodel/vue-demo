@@ -6,6 +6,9 @@ import router from './router'
 import store from './store'
 import 'lib-flexible/flexible'
 import './style/reset.css'
+import axios from '../node_modules/axios'
+
+Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -13,6 +16,7 @@ new Vue({
   el: '#app',
   store,
   router,
+  axios,
   components: { App },
   template: '<App/>'
 })
