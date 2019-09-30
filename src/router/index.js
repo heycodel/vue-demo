@@ -10,25 +10,40 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/index',
       name: 'index',
       component: index
     },
     {
-      path: '/',
+      path: '/HelloWorld',
       name: 'HelloWorld',
       component: HelloWorld
     },
     {
-      path: '/',
+      path: '/childPage',
       name: 'childPage',
       component: childPage
     },
     {
       path: '/songList',
       name: 'songList',
-      component: songList
+      component: songList,
+      children:[
+        {
+
+          path: '/albumList',
+          name: 'albumList',
+          component: (resolve) => require(['@/components/listChild/albumList'], resolve),
+      },
+        {
+          path: '/songlist',
+          name: 'songlist',
+          component: (resolve) => require(['@/components/listChild/songList'], resolve),
+        },
+
+      ]
     },
+
     // {
     //   path: '/',
     //   name: 'index',

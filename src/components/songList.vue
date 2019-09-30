@@ -2,23 +2,18 @@
   <div>
     <div class="header_bg">
         <div class="back_url">
-          <img src="../assets/return.png" alt="">
+          <img @click="back" src="../assets/return.png" alt="">
         </div>
     </div>
     <div class="tab_box">
-        <div class="tab_title">歌曲</div>
-        <div class="tab_title">专辑</div>
+      <div class="tab_title"><router-link to="/songlist"> 歌曲</router-link></div>
+      <div class="tab_title"><router-link to="/albumList"> 专辑 </router-link></div>
     </div>
-    <ul class="song_list">
-      <li class="list_item" v-for="item in song_array">
-          <div class="song_pic"><img src="../assets/jay.png" alt=""></div>
-          <div class="song_info">
-            <p class="song_name">{{item.name}}</p>
-            <span class="singer">{{item.singer}}</span>
-          </div>
-        <div class="song_status"><img src="../assets/play.png" alt=""></div>
-      </li>
-    </ul>
+    <transition name="fade1">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </transition>
   </div>
 </template>
 
@@ -41,6 +36,11 @@
          ]
         }
       },
+      methods:{
+          back(){
+            this.$router.push({path: '/index'});
+          }
+      }
     }
 </script>
 
@@ -66,51 +66,47 @@
     font-weight:500;
     color:rgba(153,153,153,1);
   }
-  .song_list{
-    padding: 24px 41px 0 27px;
-    background: #f4f4f4;
-  }
-  .list_item{
-    display: flex;
-    align-items: center;
-    margin-top: 58px;
-  }
-  .list_item:first-child{
-    margin-top: 0;
-  }
-  .song_pic{
-    width: 101px;
-    height: 101px;
-  }
-  .song_status{
-    width: 40px;
-    height: 40px;
-    margin-left: auto;
-  }
   img{
     width: 100%;
     height: 100%;
-  }
-  .song_info{
-    text-align: left;
-    margin-left: 29px;
-  }
-  .song_name{
-    font-size:28px;
-    font-family:PingFang-SC-Medium;
-    font-weight:500;
-    color:rgba(51,51,51,1);
-  }
-  .singer{
-    margin-top: 18px;
-    font-size:24px;
-    font-family:PingFang-SC-Medium;
-    font-weight:500;
-    color:rgba(170,170,170,1);
   }
   .back_url{
     width: 40px;
     height: 40px;
     margin-left: 29px;
+  }
+  a {
+    text-decoration: none;
+    color: #999999;
+  }
+  .router-link-active {
+    text-decoration: none;
+    color: #00EDE2;
+  }
+  .router-link-active{
+    position:relative;
+  }
+  .router-link-active:after{
+    content:"";
+    position:absolute;
+    top:.67rem;
+    left:.3rem;
+    border-bottom:10px solid #00EDE2;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+  }
+  /* 子路由进去动画 */
+  .fade1-enter-active{
+    transition: all 0.2s;
+  }
+   .fade1-leave-active {
+     transition: all 0.1s;
+      }
+  .fade1-enter{
+    opacity: 0;
+    transform: translate3d(20%, 0, 0);
+  }
+  .fade1-enter{
+    opacity: 0.9;
   }
 </style>

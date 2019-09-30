@@ -2,7 +2,7 @@
   <div>
     <div class="bg">
       <div class="begin">
-      <div class="btn">Jay Chou</div>
+      <div class="btn" @click="toSong">Jay Chou</div>
       </div>
     </div>
   </div>
@@ -10,7 +10,17 @@
 
 <script>
     export default {
-        name: "index"
+        name: "index",
+      data(){
+          return{
+
+          }
+      },
+      methods:{
+        toSong(){
+          this.$router.push({path: '/songlist'});
+        }
+      },
     }
 </script>
 
