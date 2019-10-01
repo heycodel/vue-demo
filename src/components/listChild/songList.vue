@@ -31,6 +31,38 @@
               }
             ]
           }
+      },
+      created() {
+          // this.axios.get('https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&jsonpCallback=callback&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&singermid=0025NhlN2yWrP4&order=listen&begin=0&num=30&songstatus=1')
+          //   .then(res => {
+          //   console.log('12412')
+          // })
+          //   .catch(err => {
+          //     console.log(err);
+          //   });
+      },
+      mounted() {
+          this.loadInfo();
+      },
+      methods:{
+          loadInfo() {
+      var url="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&jsonpCallback=callback&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&singermid=0025NhlN2yWrP4&order=listen&begin=0&num=30&songstatus=1";
+      $.ajax({
+        type : "get",
+        async : true,
+        url : url,
+        dataType : "jsonp",
+        jsonp: "callbackParam",//服务端用于接收callback调用的function名的参数
+        success : function(data){
+          console.log(data);//这个地方报错是，不是一个函数
+        },
+        error:function(){
+          console.log("error");
+        }
+
+      });
+
+    }
       }
     }
 </script>

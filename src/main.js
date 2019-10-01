@@ -11,6 +11,9 @@ import axios from '../node_modules/axios'
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
+Vue.prototype.axios = axios
+axios.defaults.baseURL = '/api'
+axios.defaults.headers['Content-Type'] = 'application/json';
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

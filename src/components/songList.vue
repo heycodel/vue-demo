@@ -4,12 +4,21 @@
         <div class="back_url">
           <img @click="back" src="../assets/return.png" alt="">
         </div>
+      <div class="singer_info">
+        <div class="singer_pic">
+          <img src="../assets/images/jay_bg.jpg" alt="">
+        </div>
+        <div class="singer_right">
+          <p class="singer_name">周杰伦(Jay Chou)</p>
+          <p class="singer_tips">简介:中国台湾流行乐男歌手、音乐人、演员、导演、编剧等。</p>
+        </div>
+      </div>
     </div>
     <div class="tab_box">
       <div class="tab_title"><router-link to="/songlist"> 歌曲</router-link></div>
       <div class="tab_title"><router-link to="/albumList"> 专辑 </router-link></div>
     </div>
-    <transition name="fade1">
+    <transition name="fade" mode="out-in">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
@@ -45,9 +54,14 @@
 </script>
 
 <style scoped>
+  .singer_info{
+    width: 100%;
+    display: flex;
+    margin-top: 69px;
+  }
   .header_bg{
-    height: 420px;
-    background: url("../assets/jay.png") no-repeat;
+    height: 250px;
+    background: url("../assets/images/timg.jpeg") no-repeat;
     background-size: cover;
     /*padding: 51px 0 0 16px;*/
     padding: 50px 0 91px 0 ;
@@ -95,18 +109,52 @@
     border-left:10px solid transparent;
     border-right:10px solid transparent;
   }
+  .singer_pic{
+    width: 160px;
+    height: 160px;
+    margin-left: 36px;
+  }
+  .singer_name{
+    font-size:30px;
+    font-family:PingFang SC;
+    font-weight:500;
+    color: #fff;
+    text-align: left;
+  }
+  .singer_tips{
+    font-size:24px;
+    font-family:PingFang SC;
+    font-weight:500;
+    color: #fff;
+    text-align: left;
+    margin-top: 90px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  .singer_right{
+    width: 375px;
+    margin-left: 31px;
+  }
   /* 子路由进去动画 */
-  .fade1-enter-active{
-    transition: all 0.2s;
+  /*.fade1-enter-active{*/
+    /*transition: all 0.2s;*/
+  /*}*/
+   /*!*.fade1-leave-active {*!*/
+     /*!*transition: all 0.1s;*!*/
+      /*!*}*!*/
+  /*.fade1-enter{*/
+    /*opacity: 0;*/
+    /*transform: translate3d(20%, 0, 0);*/
+  /*}*/
+  /*.fade1-enter{*/
+    /*opacity: 0.9;*/
+  /*}*/
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
   }
-   .fade1-leave-active {
-     transition: all 0.1s;
-      }
-  .fade1-enter{
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
-    transform: translate3d(20%, 0, 0);
   }
-  .fade1-enter{
-    opacity: 0.9;
-  }
+
 </style>
