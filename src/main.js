@@ -15,6 +15,11 @@ Vue.prototype.axios = axios
 axios.defaults.baseURL = '/api'
 axios.defaults.headers['Content-Type'] = 'application/json';
 /* eslint-disable no-new */
+// 在 main.js
+Vue.prototype.$eventBus=new Vue()
+
+
+
 new Vue({
   el: '#app',
   store,

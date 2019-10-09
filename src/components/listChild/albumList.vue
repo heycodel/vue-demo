@@ -31,6 +31,10 @@
             }
           ]
         }
+      },
+      created() {
+        // 传值组件
+        this.$eventBus.$emit('eventTarget','这是eventTarget传过来的值')
       }
     }
 </script>

@@ -45,6 +45,13 @@
          ]
         }
       },
+      created(){
+        // 接收组件
+        this.$eventBus.$on("eventTarget",v=>{
+          console.log('eventTarget',v);//这是eventTarget传过来的值
+        })
+
+      },
       methods:{
           back(){
             this.$router.push({path: '/index'});
